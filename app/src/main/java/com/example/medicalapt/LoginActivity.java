@@ -7,12 +7,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.medicalapt.data.AppDatabase;
 import com.example.medicalapt.data.User;
-import com.example.medicalapt.util.SessionManager;
+import com.example.medicalapt.util.SessionSharedPref;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -51,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        SessionManager.logIn(this, user);
+        SessionSharedPref.logIn(this, user);
         Toast.makeText(this, getString(R.string.welcome_user, user.getUsername()), Toast.LENGTH_SHORT).show();
         startActivity(new Intent(this, LandingPageActivity.class));
         finish();

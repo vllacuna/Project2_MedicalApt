@@ -12,4 +12,7 @@
     <string name="admin_user">Admin User</string>
     <string name="standard_user">Standard User</string>
     <string name="admin_feature_message">Admin feature goes here</string>
+    <string name="enter_username_password">Please enter a password and password</string>
+    <string name="invalid_credentials">Invalid username or password.</string>
+    <string name="welcome_user">Welcome, %1$s</string>
 </resources>
