@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">MedicalApt</string>
+    <string name="login">Login</string>
+    <string name="back">Back</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
     <string name="create_an_account">Create an Account</string>
     <string name="login">Login</string>
     <string name="medical_appointment_tracker">Medical Apt Tracker</string>
