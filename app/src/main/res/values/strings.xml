@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MedicalApt</string>
+    <string name="logout">Logout</string>
+    <string name="admin_area">Admin Area</string>
 </resources>
