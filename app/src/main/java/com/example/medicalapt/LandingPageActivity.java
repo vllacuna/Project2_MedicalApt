@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.medicalapt.util.SessionManager;
+import com.example.medicalapt.util.SessionSharedPref;
 
 public class LandingPageActivity extends AppCompatActivity {
 

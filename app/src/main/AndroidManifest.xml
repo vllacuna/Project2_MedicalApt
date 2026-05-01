@@ -14,6 +14,7 @@
         <activity
             android:name=".LandingPageActivity"
             android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:exported="false"
             android:theme="@style/Theme.MedicalApt" />
