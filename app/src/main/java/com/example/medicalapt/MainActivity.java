@@ -12,6 +12,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.medicalapt.data.AppDatabase;
+import com.example.medicalapt.util.SessionSharedPref;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
 
         AppDatabase.getDatabase(getApplicationContext()).seedDefaultUsers();
 
-        SharedPreferences preferences = getSharedPreferences(SessionManager.PREF_NAME, MODE_PRIVATE);
-        if (preferences.getBoolean(SessionManager.KEY_IS_LOGGED_IN, false)) {
+        SharedPreferences preferences = getSharedPreferences(SessionSharedPref.PREF_NAME, MODE_PRIVATE);
+        if (preferences.getBoolean(SessionSharedPref.KEY_IS_LOGGED_IN, false)) {
             startActivity(new Intent(this, LandingPageActivity.class));
             finish();
             return;
