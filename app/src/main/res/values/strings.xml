@@ -27,4 +27,8 @@
     <string name="height">height</string>
     <string name="save">Save</string>
     <string name="Logout">Logout</string>
+    <string name="create_as_admin">Create as admin</string>
+    <string name="save_account">Save Account</string>
+    <string name="cancel">Cancel</string>
+    <string name="that_username_already_exists">That username already exists.</string>
 </resources>
