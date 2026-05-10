@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/isAdmin"
+        android:textSize="23sp"
+        android:text="@string/Admin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="3dp"/>
+
+    <TextView
+        android:id="@+id/patientLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/patient"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="120dp" />
+
+    <EditText
+        android:id="@+id/patientInputEditText"
+        android:layout_width="256dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="8dp"
+        android:autofillHints=""
+        android:inputType="textAutoComplete"
+        android:padding="8dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/patientLabelTextView"
+        app:layout_constraintStart_toEndOf="@+id/patientLabelTextView"
+        android:hint="@string/enter_patient_name"/>
+    <TextView
+        android:id="@+id/dOBLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dob"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="160dp" />
+
+    <EditText
+        android:id="@+id/dOBInputEditText"
+        android:layout_width="256dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="8dp"
+        android:autofillHints=""
+        android:inputType="textAutoComplete"
+        android:padding="8dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/dOBLabelTextView"
+        app:layout_constraintStart_toEndOf="@+id/dOBLabelTextView"
+        android:hint="@string/enter_date_of_birth"/>
+    <TextView
+        android:id="@+id/sexLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sex"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="200dp" />
+
+
+    <EditText
+        android:id="@+id/sexInputEditText"
+        android:layout_width="256dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="8dp"
+        android:autofillHints=""
+        android:inputType="textAutoComplete"
+        android:padding="8dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/sexLabelTextView"
+        app:layout_constraintStart_toEndOf="@+id/sexLabelTextView"
+        android:hint="@string/enter_the_sex_of_patient"/>
+
+    <TextView
+        android:id="@+id/weightLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/weight"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="240dp" />
+
+
+    <EditText
+        android:id="@+id/weightInputEditText"
+        android:layout_width="256dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="8dp"
+        android:autofillHints=""
+        android:inputType="textAutoComplete"
+        android:padding="8dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/weightLabelTextView"
+        app:layout_constraintStart_toEndOf="@+id/weightLabelTextView"
+        android:hint="enter the weight of patient"/>
+
+
+    <TextView
+        android:id="@+id/heightLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/height"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="280dp" />
+
+
+    <EditText
+        android:id="@+id/heightInputEditText"
+        android:layout_width="256dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="8dp"
+        android:autofillHints=""
+        android:inputType="textAutoComplete"
+        android:padding="8dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/heightLabelTextView"
+        app:layout_constraintStart_toEndOf="@+id/heightLabelTextView"
+        android:hint="enter the height of patient"/>
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/heightInputEditText"
+        android:id="@+id/saveButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="45dp"
+        android:text="@string/save"
+        android:textSize="23sp"
+        />
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/saveButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="45dp"
+        android:id="@+id/logoutButton"
+        android:text="@string/Logout"
+        android:textSize="23sp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

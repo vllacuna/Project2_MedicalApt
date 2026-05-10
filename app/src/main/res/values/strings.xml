@@ -15,4 +15,16 @@
     <string name="enter_username_password">Please enter a password and password</string>
     <string name="invalid_credentials">Invalid username or password.</string>
     <string name="welcome_user">Welcome, %1$s</string>
+    <string name="admin">ADMIN</string>
+    <string name="Admin">ADMIN</string>
+    <string name="patient">patient</string>
+    <string name="enter_patient_name">enter patient name</string>
+    <string name="dob">dOB</string>
+    <string name="enter_date_of_birth">enter date of birth</string>
+    <string name="sex">sex</string>
+    <string name="enter_the_sex_of_patient">enter the sex of patient</string>
+    <string name="weight">weight</string>
+    <string name="height">height</string>
+    <string name="save">Save</string>
+    <string name="Logout">Logout</string>
 </resources>

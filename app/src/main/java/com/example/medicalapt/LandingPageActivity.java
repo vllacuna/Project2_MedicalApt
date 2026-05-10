@@ -37,9 +37,10 @@ public class LandingPageActivity extends AppCompatActivity {
         accessLevelTextView.setText(isAdmin ? R.string.admin_user : R.string.standard_user);
         adminAreaButton.setVisibility(isAdmin ? View.VISIBLE : View.INVISIBLE);
 
-        adminAreaButton.setOnClickListener(view ->
-                Toast.makeText(this, R.string.admin_feature_message, Toast.LENGTH_SHORT).show());
-
+        adminAreaButton.setOnClickListener(view -> {
+                    Intent intent = new Intent(this, AdminActivity.class);
+                    startActivity(intent);
+                });
         logoutButton.setOnClickListener(view -> {
             SessionSharedPref.logOut(this);
             Intent intent = new Intent(this, MainActivity.class);
