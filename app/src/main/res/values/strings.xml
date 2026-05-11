@@ -31,4 +31,12 @@
     <string name="save_account">Save Account</string>
     <string name="cancel">Cancel</string>
     <string name="that_username_already_exists">That username already exists.</string>
+    <string name="create_appointment">Create Appointment</string>
+    <string name="patient_name">Patient Name</string>
+    <string name="select_date">Select Date</string>
+    <string name="select_time">Select Time</string>
+    <string name="notes_optional">Notes Optional</string>
+    <string name="save_appointment">Save Appointment</string>
+    <string name="no_appointments_yet">No Appointments Yet</string>
+    <string name="your_appointments">Your appointments:</string>
 </resources>
