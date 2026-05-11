@@ -6,86 +6,84 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="24dp"
-    tools:context=".LandingPageActivity">
+    tools:context=".CreateAppointmentActivity">
 
     <TextView
-        android:id="@+id/landingTitleTextView"
+        android:id="@+id/createAppointmentTitleTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:gravity="center"
-        android:text="@string/app_name"
-        android:textSize="30sp"
+        android:text="@string/create_appointment"
+        android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/welcomeTextView"
+    <EditText
+        android:id="@+id/appointmentPatientNameEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:gravity="center"
-        android:textSize="22sp"
+        android:hint="@string/patient_name"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/landingTitleTextView"
-        tools:text="Logged in as: testuser1" />
+        app:layout_constraintTop_toBottomOf="@id/createAppointmentTitleTextView" />
 
-    <TextView
-        android:id="@+id/accessLevelTextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:gravity="center"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/welcomeTextView"
-        tools:text="Standard user" />
-
-    <Button
-        android:id="@+id/createAppointmentButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="@string/create_appointment"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/accessLevelTextView" />
-
-    <Button
-        android:id="@+id/adminAreaButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:text="@string/admin_area"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/createAppointmentButton"
-        tools:visibility="visible" />
-
-    <TextView
-        android:id="@+id/appointmentsTextView"
+    <EditText
+        android:id="@+id/appointmentDateEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:textSize="16sp"
+        android:hint="@string/select_date"
+        android:inputType="date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/adminAreaButton"
-        tools:text="Upcoming appointments" />
+        app:layout_constraintTop_toBottomOf="@id/appointmentPatientNameEditText" />
 
-    <Button
-        android:id="@+id/logoutButton"
+    <EditText
+        android:id="@+id/appointmentTimeEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:text="@string/logout"
+        android:layout_marginTop="16dp"
+        android:hint="@string/select_time"
+        android:inputType="time"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/appointmentsTextView" />
+        app:layout_constraintTop_toBottomOf="@id/appointmentDateEditText" />
+
+    <EditText
+        android:id="@+id/appointmentNotesEditText"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="16dp"
+        android:gravity="top"
+        android:hint="@string/notes_optional"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appointmentTimeEditText" />
+
+    <Button
+        android:id="@+id/saveAppointmentButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/save_appointment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appointmentNotesEditText" />
+
+    <Button
+        android:id="@+id/cancelAppointmentButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/cancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/saveAppointmentButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
