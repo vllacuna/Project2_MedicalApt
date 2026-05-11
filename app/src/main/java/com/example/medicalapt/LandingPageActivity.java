@@ -2,8 +2,10 @@ package com.example.medicalapt;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +20,7 @@ import java.util.List;
 public class LandingPageActivity extends AppCompatActivity {
 
     private TextView appointmentsTextView;
+    private EditText deleteAppointmentIdEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +38,10 @@ public class LandingPageActivity extends AppCompatActivity {
         TextView accessLevelTextView = findViewById(R.id.accessLevelTextView);
         Button createAppointmentButton = findViewById(R.id.createAppointmentButton);
         Button adminAreaButton = findViewById(R.id.adminAreaButton);
+        Button deleteAppointmentButton = findViewById(R.id.deleteAppointmentButton);
         Button logoutButton = findViewById(R.id.logoutButton);
         appointmentsTextView = findViewById(R.id.appointmentsTextView);
+        deleteAppointmentIdEditText = findViewById(R.id.deleteAppointmentIdEditText);
 
         String username = SessionSharedPref.getUsername(this);
         boolean isAdmin = SessionSharedPref.isAdmin(this);
@@ -50,6 +55,7 @@ public class LandingPageActivity extends AppCompatActivity {
                     Intent intent = new Intent(this, AdminActivity.class);
                     startActivity(intent);
                 });
+        deleteAppointmentButton.setOnClickListener(view -> deleteAppointment());
         logoutButton.setOnClickListener(view -> {
             SessionSharedPref.logOut(this);
             Intent intent = new Intent(this, MainActivity.class);
@@ -76,7 +82,9 @@ public class LandingPageActivity extends AppCompatActivity {
 
         StringBuilder builder = new StringBuilder(getString(R.string.your_appointments));
         for (Appointment appointment : appointments) {
-            builder.append("\n\n")
+            builder.append("\n\nID: ")
+                    .append(appointment.getAppointmentId())
+                    .append("\n")
                     .append(appointment.getPatientName())
                     .append("\n")
                     .append(appointment.getAppointmentDate())
@@ -87,5 +95,33 @@ public class LandingPageActivity extends AppCompatActivity {
             }
         }
         appointmentsTextView.setText(builder.toString());
+    }
+
+    private void deleteAppointment() {
+        String appointmentIdText = deleteAppointmentIdEditText.getText().toString().trim();
+
+        if (TextUtils.isEmpty(appointmentIdText)) {
+            Toast.makeText(this, "Enter an appointment ID to delete.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        int appointmentId;
+        try {
+            appointmentId = Integer.parseInt(appointmentIdText);
+        } catch (NumberFormatException e) {
+            Toast.makeText(this, "Appointment ID must be a number.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        String username = SessionSharedPref.getUsername(this);
+        int deletedRows = AppDatabase.getDatabase(getApplicationContext()).appointmentDao().deleteAppointmentForUser(appointmentId, username);
+
+        if (deletedRows > 0) {
+            Toast.makeText(this, "Appointment deleted.", Toast.LENGTH_SHORT).show();
+            deleteAppointmentIdEditText.setText("");
+            showAppointments();
+        } else {
+            Toast.makeText(this, "Appointment not found.", Toast.LENGTH_SHORT).show();
+        }
     }
 }

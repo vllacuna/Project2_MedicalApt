@@ -39,4 +39,6 @@
     <string name="save_appointment">Save Appointment</string>
     <string name="no_appointments_yet">No Appointments Yet</string>
     <string name="your_appointments">Your appointments:</string>
+    <string name="appointment_id_to_delete">Appointment ID to Delete</string>
+    <string name="delete_appointment">Delete Appointment</string>
 </resources>

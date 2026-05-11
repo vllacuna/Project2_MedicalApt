@@ -16,4 +16,7 @@ public interface AppointmentDao {
 
     @Query("SELECT * FROM appointments ORDER BY appointment_date, appointment_time")
     List<Appointment> getAllAppointments();
+
+    @Query("DELETE FROM appointments WHERE appointment_id = :appointmentId AND username = :username")
+    int deleteAppointmentForUser(int appointmentId, String username);
 }
